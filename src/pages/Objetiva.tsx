@@ -38,11 +38,11 @@ const Objetiva = () => {
   const faqs = [
     {
       question: "Isso é confiável?",
-      answer: "Sim, somos regulamentados pela ANEEL e em parceria com empresas autorizadas no mercado livre de energia."
+      answer: "Sim, somos regulamentados pela ANEEL e trabalhamos com empresas autorizadas para oferecer desconto na sua conta de luz."
     },
     {
       question: "Preciso trocar de companhia elétrica?",
-      answer: "Não. A distribuidora continua a mesma. Você apenas recebe desconto vindo do mercado livre."
+      answer: "Não. A distribuidora continua a mesma. Você apenas recebe desconto na sua fatura de energia."
     },
     {
       question: "Tem algum custo ou taxa de adesão?",
@@ -77,10 +77,12 @@ const Objetiva = () => {
             alt="ECOFAD Logo" 
             className="h-12"
           />
-          <Button variant="cta" size="sm" onClick={handleWhatsAppClick}>
-            <Calculator className="w-4 h-4 mr-2" />
-            Simular Economia
-          </Button>
+          <a href="/simulacao">
+            <Button variant="cta" size="sm">
+              <Calculator className="w-4 h-4 mr-2" />
+              Simular Economia
+            </Button>
+          </a>
         </div>
       </header>
 
@@ -116,10 +118,12 @@ const Objetiva = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="cta" size="lg" className="text-lg px-8 py-4" onClick={handleWhatsAppClick}>
-                  <Calculator className="w-5 h-5 mr-2" />
-                  Calcular Minha Economia
-                </Button>
+                <a href="/simulacao">
+                  <Button variant="cta" size="lg" className="text-lg px-8 py-4">
+                    <Calculator className="w-5 h-5 mr-2" />
+                    Calcular Minha Economia
+                  </Button>
+                </a>
                 <Button variant="outline" size="lg" className="text-lg px-8 py-4" onClick={handleWhatsAppClick}>
                   <Phone className="w-5 h-5 mr-2" />
                   Falar com Especialista

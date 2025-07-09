@@ -4,12 +4,12 @@ import { Shield, Leaf, Phone, Mail, MapPin } from "lucide-react";
 
 const ProfessionalFooter = () => {
   return (
-    <footer className="relative bg-secondary text-secondary-foreground overflow-hidden">
-      {/* Background Image */}
+    <footer className="relative bg-secondary text-secondary-foreground">
+      {/* Background Image with better overlay */}
       <div 
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 bg-secondary/95"
         style={{
-          backgroundImage: `url('/lovable-uploads/a4ceeaa5-9729-4375-8bcb-2bc0770215b6.png')`,
+          backgroundImage: `linear-gradient(rgba(0, 41, 36, 0.95), rgba(0, 41, 36, 0.95)), url('/lovable-uploads/a4ceeaa5-9729-4375-8bcb-2bc0770215b6.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -27,22 +27,22 @@ const ProfessionalFooter = () => {
                 alt="ECOFAD Logo" 
                 className="h-16 mb-6 filter brightness-0 invert"
               />
-              <p className="text-lg mb-6 leading-relaxed opacity-90">
+              <p className="text-lg mb-6 leading-relaxed text-secondary-foreground">
                 Energia limpa, economia garantida, futuro sustentável. 
-                Transformamos sua relação com a energia elétrica através do mercado livre.
+                Transformamos sua relação com a energia elétrica.
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <Card className="p-3 bg-primary/10 border-primary/30">
+                <Card className="p-3 bg-background/10 border-secondary-foreground/30">
                   <div className="flex items-center">
                     <Shield className="w-5 h-5 text-primary mr-2" />
-                    <span className="text-sm font-medium">Regulamentado ANEEL</span>
+                    <span className="text-sm font-medium text-secondary-foreground">Regulamentado ANEEL</span>
                   </div>
                 </Card>
-                <Card className="p-3 bg-primary/10 border-primary/30">
+                <Card className="p-3 bg-background/10 border-secondary-foreground/30">
                   <div className="flex items-center">
                     <Leaf className="w-5 h-5 text-primary mr-2" />
-                    <span className="text-sm font-medium">100% Energia Limpa</span>
+                    <span className="text-sm font-medium text-secondary-foreground">100% Energia Limpa</span>
                   </div>
                 </Card>
               </div>
@@ -81,18 +81,18 @@ const ProfessionalFooter = () => {
               <h4 className="text-xl font-bold mb-6 text-primary">Nossos Serviços</h4>
               <ul className="space-y-2">
                 <li className="opacity-90 hover:opacity-100 transition-opacity">
-                  <a href="#simulacao" className="hover:text-primary transition-colors">
+                  <a href="/simulacao" className="hover:text-primary transition-colors">
                     Simulação de Economia
                   </a>
                 </li>
                 <li className="opacity-90 hover:opacity-100 transition-opacity">
                   <a href="#beneficios" className="hover:text-primary transition-colors">
-                    Energia do Mercado Livre
+                    Desconto na Conta de Luz
                   </a>
                 </li>
                 <li className="opacity-90 hover:opacity-100 transition-opacity">
                   <a href="#como-funciona" className="hover:text-primary transition-colors">
-                    Consultoria Energética
+                    Como Funciona
                   </a>
                 </li>
                 <li className="opacity-90 hover:opacity-100 transition-opacity">
@@ -109,7 +109,7 @@ const ProfessionalFooter = () => {
           {/* Bottom */}
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm opacity-75 mb-4 md:mb-0">
-              © 2024 ECOFAD. Todos os direitos reservados.
+              © 2025 EcoFad. Todos os direitos reservados.
             </p>
             <div className="flex items-center space-x-6">
               <span className="text-sm opacity-75">Parceiro oficial:</span>

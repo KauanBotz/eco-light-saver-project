@@ -40,11 +40,11 @@ const Storytelling = () => {
   const faqs = [
     {
       question: "Isso é confiável?",
-      answer: "Sim, somos regulamentados pela ANEEL e em parceria com empresas autorizadas no mercado livre de energia."
+      answer: "Sim, somos regulamentados pela ANEEL e trabalhamos com empresas autorizadas para oferecer desconto na sua conta de luz."
     },
     {
       question: "Preciso trocar de companhia elétrica?",
-      answer: "Não. A distribuidora continua a mesma. Você apenas recebe desconto vindo do mercado livre."
+      answer: "Não. A distribuidora continua a mesma. Você apenas recebe desconto na sua fatura de energia."
     },
     {
       question: "Tem algum custo ou taxa de adesão?",
@@ -103,15 +103,16 @@ const Storytelling = () => {
                   <ArrowRight className="w-5 h-5 mr-2" />
                   Quero Economizar Agora
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="text-lg px-8 py-4 border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary"
-                  onClick={handleWhatsAppClick}
-                >
-                  <Calculator className="w-5 h-5 mr-2" />
-                  Calcular Minha Economia
-                </Button>
+                <a href="/simulacao">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="text-lg px-8 py-4 border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary"
+                  >
+                    <Calculator className="w-5 h-5 mr-2" />
+                    Calcular Minha Economia
+                  </Button>
+                </a>
               </div>
 
               <div className="grid grid-cols-3 gap-6">

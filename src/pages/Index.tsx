@@ -46,18 +46,18 @@ const Index = () => {
       {/* Versões */}
       <section className="py-20 px-6 bg-background">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             
             {/* Storytelling */}
-            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary">
+            <Card className="p-6 text-center hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary">
               <CardContent className="p-0">
-                <div className="w-20 h-20 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <BookOpen className="w-10 h-10 text-blue-500" />
+                <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BookOpen className="w-8 h-8 text-blue-500" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-foreground">
+                <h3 className="text-xl font-bold mb-3 text-foreground">
                   Versão Storytelling
                 </h3>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-muted-foreground mb-4 text-sm">
                   Narrativa envolvente com histórias reais de transformação e conexão emocional.
                 </p>
                 <Link to="/storytelling">
@@ -70,42 +70,21 @@ const Index = () => {
             </Card>
 
             {/* Objetiva */}
-            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary">
+            <Card className="p-6 text-center hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary">
               <CardContent className="p-0">
-                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <BarChart3 className="w-10 h-10 text-primary" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BarChart3 className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-foreground">
+                <h3 className="text-xl font-bold mb-3 text-foreground">
                   Versão Objetiva
                 </h3>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-muted-foreground mb-4 text-sm">
                   Abordagem direta e profissional, focada em dados e benefícios claros.
                 </p>
                 <Link to="/objetiva">
                   <Button variant="cta" className="w-full">
                     <BarChart3 className="w-4 h-4 mr-2" />
                     Ver Versão Objetiva
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-
-            {/* Agressiva */}
-            <Card className="p-8 text-center hover:shadow-2xl transition-all duration-300 border-2 hover:border-destructive">
-              <CardContent className="p-0">
-                <div className="w-20 h-20 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Flame className="w-10 h-10 text-destructive" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-foreground">
-                  Versão Agressiva
-                </h3>
-                <p className="text-muted-foreground mb-6">
-                  Abordagem intensa com urgência e chamadas para ação poderosas.
-                </p>
-                <Link to="/agressiva">
-                  <Button className="w-full bg-destructive hover:bg-destructive/90 text-destructive-foreground">
-                    <Flame className="w-4 h-4 mr-2" />
-                    Experimentar Agressiva
                   </Button>
                 </Link>
               </CardContent>

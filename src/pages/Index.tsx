@@ -12,16 +12,6 @@ import { Link } from "react-router-dom";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-secondary py-6 px-6 shadow-lg">
-        <div className="container mx-auto flex items-center justify-center">
-          <img 
-            src="/lovable-uploads/b7ac794d-3326-4b71-8e65-57403fb00852.png" 
-            alt="ECOFAD Logo" 
-            className="h-16"
-          />
-        </div>
-      </header>
 
       {/* Hero */}
       <section className="py-20 px-6 bg-gradient-to-br from-secondary via-secondary to-secondary/80 text-secondary-foreground">
@@ -37,7 +27,7 @@ const Index = () => {
           </h1>
           
           <p className="text-xl mb-12 opacity-90 max-w-2xl mx-auto">
-            3 abordagens diferentes para apresentar nossa solução de economia na conta de luz. 
+            2 abordagens diferentes para apresentar nossa solução de economia na conta de luz. 
             Escolha a que mais combina com você:
           </p>
         </div>
@@ -93,22 +83,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-secondary py-12 px-6 text-secondary-foreground">
-        <div className="container mx-auto text-center">
-          <img 
-            src="/lovable-uploads/f792746b-feb5-42c7-b9e2-a101e8ac277d.png" 
-            alt="ECOFAD Logo" 
-            className="h-16 mx-auto mb-6"
-          />
-          <p className="text-lg mb-4">
-            ECOFAD - Energia limpa, economia garantida, futuro sustentável.
-          </p>
-          <p className="text-sm opacity-75">
-            © 2024 ECOFAD. Todos os direitos reservados. | Regulamentado pela ANEEL
-          </p>
-        </div>
-      </footer>
     </div>
   );
 };

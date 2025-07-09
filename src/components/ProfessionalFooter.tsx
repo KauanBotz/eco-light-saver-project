@@ -22,27 +22,29 @@ const ProfessionalFooter = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Logo e Descrição */}
             <div className="md:col-span-2">
-              <img 
-                src="/lovable-uploads/f792746b-feb5-42c7-b9e2-a101e8ac277d.png" 
-                alt="ECOFAD Logo" 
-                className="h-16 mb-6 filter brightness-0 invert"
-              />
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg w-fit mb-6">
+                <img 
+                  src="/lovable-uploads/f792746b-feb5-42c7-b9e2-a101e8ac277d.png" 
+                  alt="ECOFAD Logo" 
+                  className="h-16 filter brightness-0 invert"
+                />
+              </div>
               <p className="text-lg mb-6 leading-relaxed text-secondary-foreground">
                 Energia limpa, economia garantida, futuro sustentável. 
                 Transformamos sua relação com a energia elétrica.
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <Card className="p-3 bg-background/10 border-secondary-foreground/30">
+                <Card className="p-3 bg-white/10 border-white/30">
                   <div className="flex items-center">
                     <Shield className="w-5 h-5 text-primary mr-2" />
-                    <span className="text-sm font-medium text-secondary-foreground">Regulamentado ANEEL</span>
+                    <span className="text-sm font-medium text-white">Regulamentado ANEEL</span>
                   </div>
                 </Card>
-                <Card className="p-3 bg-background/10 border-secondary-foreground/30">
+                <Card className="p-3 bg-white/10 border-white/30">
                   <div className="flex items-center">
                     <Leaf className="w-5 h-5 text-primary mr-2" />
-                    <span className="text-sm font-medium text-secondary-foreground">100% Energia Limpa</span>
+                    <span className="text-sm font-medium text-white">100% Energia Limpa</span>
                   </div>
                 </Card>
               </div>
@@ -86,9 +88,12 @@ const ProfessionalFooter = () => {
                   </a>
                 </li>
                 <li className="opacity-90 hover:opacity-100 transition-opacity">
-                  <a href="#beneficios" className="hover:text-primary transition-colors">
+                  <button 
+                    onClick={() => window.location.pathname === '/simulacao' ? window.history.back() : window.location.href = '/storytelling#beneficios'}
+                    className="hover:text-primary transition-colors text-left"
+                  >
                     Desconto na Conta de Luz
-                  </a>
+                  </button>
                 </li>
                 <li className="opacity-90 hover:opacity-100 transition-opacity">
                   <a href="#como-funciona" className="hover:text-primary transition-colors">

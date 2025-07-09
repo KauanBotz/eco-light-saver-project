@@ -18,13 +18,29 @@ import {
   Award,
   Phone
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SimulatorForm from "@/components/SimulatorForm";
 import ContactForm from "@/components/ContactForm";
 import ProfessionalFooter from "@/components/ProfessionalFooter";
 
 const Objetiva = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const logo = document.getElementById('logo');
+      if (logo) {
+        if (window.scrollY > 100) {
+          logo.style.opacity = '0';
+        } else {
+          logo.style.opacity = '1';
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -70,12 +86,13 @@ const Objetiva = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header Simples */}
-      <header className="bg-background border-b py-4 px-6 sticky top-0 z-50 backdrop-blur-sm">
+      <header className="bg-background border-b py-4 px-6 transition-all duration-300 transform" id="header">
         <div className="container mx-auto flex items-center justify-between">
           <img 
             src="/lovable-uploads/b7ac794d-3326-4b71-8e65-57403fb00852.png" 
             alt="ECOFAD Logo" 
-            className="h-12"
+            className="h-12 transition-opacity duration-300" 
+            id="logo"
           />
           <a href="/simulacao">
             <Button variant="cta" size="sm">
@@ -353,18 +370,16 @@ const Objetiva = () => {
                 >
                   <h3 className="text-lg font-semibold text-foreground pr-4">{faq.question}</h3>
                   <div className="flex-shrink-0">
-                    {openFaq === index ? (
-                      <ChevronUp className="w-5 h-5 text-primary" />
-                    ) : (
+                    <div className="transition-transform duration-300" style={{ transform: openFaq === index ? 'rotate(180deg)' : 'rotate(0deg)' }}>
                       <ChevronDown className="w-5 h-5 text-primary" />
-                    )}
+                    </div>
                   </div>
                 </button>
-                {openFaq === index && (
+                <div className={`overflow-hidden transition-all duration-300 ${openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                   <div className="px-6 pb-6 border-t border-border">
                     <p className="text-muted-foreground pt-4 leading-relaxed">{faq.answer}</p>
                   </div>
-                )}
+                </div>
               </Card>
             ))}
           </div>

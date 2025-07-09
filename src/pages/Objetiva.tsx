@@ -19,6 +19,9 @@ import {
   Phone
 } from "lucide-react";
 import { useState } from "react";
+import SimulatorForm from "@/components/SimulatorForm";
+import ContactForm from "@/components/ContactForm";
+import ProfessionalFooter from "@/components/ProfessionalFooter";
 
 const Objetiva = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -125,43 +128,7 @@ const Objetiva = () => {
             </div>
             
             <div className="relative">
-              <Card className="p-8 bg-background shadow-2xl border-2 border-primary/20">
-                <CardContent className="p-0">
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">Simulação Instantânea</h3>
-                    <p className="text-muted-foreground">Veja quanto você pode economizar</p>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="p-4 bg-muted rounded-lg">
-                      <label className="block text-sm font-medium mb-2">Valor da sua conta atual</label>
-                      <div className="flex items-center">
-                        <span className="text-2xl font-bold text-foreground">R$ 350,00</span>
-                        <span className="text-sm text-muted-foreground ml-2">/mês</span>
-                      </div>
-                    </div>
-                    
-                    <div className="p-4 bg-primary/10 rounded-lg border-2 border-primary">
-                      <label className="block text-sm font-medium mb-2 text-primary">Com ECOFAD</label>
-                      <div className="flex items-center">
-                        <span className="text-2xl font-bold text-primary">R$ 280,00</span>
-                        <span className="text-sm text-primary ml-2">/mês</span>
-                      </div>
-                    </div>
-                    
-                    <div className="p-4 bg-primary rounded-lg text-center">
-                      <div className="text-sm font-medium text-primary-foreground mb-1">Sua economia</div>
-                      <div className="text-3xl font-bold text-primary-foreground">R$ 70/mês</div>
-                      <div className="text-sm text-primary-foreground opacity-90">R$ 840/ano</div>
-                    </div>
-                  </div>
-                  
-                  <Button variant="cta" className="w-full mt-6" size="lg" onClick={handleWhatsAppClick}>
-                    <Target className="w-4 h-4 mr-2" />
-                    Garantir Este Desconto
-                  </Button>
-                </CardContent>
-              </Card>
+              <SimulatorForm />
             </div>
           </div>
         </div>
@@ -401,50 +368,50 @@ const Objetiva = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="py-20 px-6 bg-muted">
-        <div className="container mx-auto text-center">
-          <Card className="p-12 max-w-3xl mx-auto">
-            <CardContent className="p-0">
+      <section className="py-20 px-6 bg-background" id="contato">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
               <h2 className="text-3xl font-bold mb-6 text-foreground">
                 Comece a Economizar <span className="text-primary">Hoje Mesmo</span>
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
-                Processo simples, rápido e sem compromisso
+                Receba até 20% de desconto na sua fatura de energia, sem taxa de adesão e com contratação 100% digital.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="cta" size="lg" className="text-xl px-12 py-6" onClick={handleWhatsAppClick}>
-                  <Calculator className="w-6 h-6 mr-2" />
-                  Simular Agora
-                </Button>
-                <Button variant="outline" size="lg" className="text-xl px-12 py-6" onClick={handleWhatsAppClick}>
-                  <MessageCircle className="w-6 h-6 mr-2" />
-                  Tirar Dúvidas
-                </Button>
+              
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-primary mr-3" />
+                  <span className="font-medium">Processo 100% digital</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-primary mr-3" />
+                  <span className="font-medium">Atendimento via WhatsApp</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-primary mr-3" />
+                  <span className="font-medium">Sem compromisso ou fidelidade</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-primary mr-3" />
+                  <span className="font-medium">Regulamentado pela ANEEL</span>
+                </div>
               </div>
-              <p className="text-sm text-muted-foreground mt-4">
-                Sem taxa de adesão • Sem fidelidade • Regulamentado pela ANEEL
-              </p>
-            </CardContent>
-          </Card>
+              
+              <Button variant="cta" size="lg" className="text-lg px-8 py-4" onClick={handleWhatsAppClick}>
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Falar Direto no WhatsApp
+              </Button>
+            </div>
+            
+            <div>
+              <ContactForm />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-secondary py-12 px-6 text-secondary-foreground">
-        <div className="container mx-auto text-center">
-          <img 
-            src="/lovable-uploads/f792746b-feb5-42c7-b9e2-a101e8ac277d.png" 
-            alt="ECOFAD Logo" 
-            className="h-16 mx-auto mb-6"
-          />
-          <p className="text-lg mb-4">
-            Energia limpa, economia garantida, futuro sustentável.
-          </p>
-          <p className="text-sm opacity-75">
-            © 2024 ECOFAD. Todos os direitos reservados. | Regulamentado pela ANEEL
-          </p>
-        </div>
-      </footer>
+      <ProfessionalFooter />
     </div>
   );
 };

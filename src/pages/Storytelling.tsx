@@ -21,6 +21,9 @@ import {
   Phone
 } from "lucide-react";
 import { useState } from "react";
+import SimulatorForm from "@/components/SimulatorForm";
+import ContactForm from "@/components/ContactForm";
+import ProfessionalFooter from "@/components/ProfessionalFooter";
 
 const Storytelling = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -128,34 +131,7 @@ const Storytelling = () => {
             </div>
             
             <div className="relative">
-              <Card className="p-8 bg-background/95 backdrop-blur shadow-2xl">
-                <CardContent className="p-0">
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">Simulação Real</h3>
-                    <p className="text-muted-foreground">Veja sua economia</p>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="flex justify-between p-4 bg-muted rounded-lg">
-                      <span className="font-medium">Conta Atual:</span>
-                      <span className="font-bold text-foreground">R$ 350,00</span>
-                    </div>
-                    <div className="flex justify-between p-4 bg-primary/10 rounded-lg">
-                      <span className="font-medium">Com ECOFAD:</span>
-                      <span className="font-bold text-primary">R$ 280,00</span>
-                    </div>
-                    <div className="flex justify-between p-4 bg-primary/20 rounded-lg border-2 border-primary">
-                      <span className="font-bold">Economia Mensal:</span>
-                      <span className="font-bold text-primary text-xl">R$ 70,00</span>
-                    </div>
-                  </div>
-                  
-                  <Button variant="cta" className="w-full mt-6" onClick={handleWhatsAppClick}>
-                    <Target className="w-4 h-4 mr-2" />
-                    Garantir Este Desconto
-                  </Button>
-                </CardContent>
-              </Card>
+              <SimulatorForm />
             </div>
           </div>
         </div>
@@ -364,51 +340,50 @@ const Storytelling = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="py-20 px-6 bg-gradient-to-r from-secondary to-secondary/90 text-secondary-foreground">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Pronto para <span className="text-primary">Começar a Economizar</span>?
-          </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Junte-se a milhares de pessoas que já descobriram como pagar menos na conta de luz
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="cta" size="lg" className="text-xl px-12 py-6" onClick={handleWhatsAppClick}>
-              <MessageCircle className="w-6 h-6 mr-2" />
-              Falar com Especialista
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="text-xl px-12 py-6 border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary"
-              onClick={handleWhatsAppClick}
-            >
-              <Phone className="w-6 h-6 mr-2" />
-              Ligar Agora
-            </Button>
+      <section className="py-20 px-6 bg-background" id="contato">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <h2 className="text-3xl font-bold mb-6 text-foreground">
+                Sua Família Merece Este <span className="text-primary">Cuidado</span>
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Receba até 20% de desconto na sua fatura de energia, sem taxa de adesão e com contratação 100% digital.
+              </p>
+              
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center">
+                  <Heart className="w-5 h-5 text-primary mr-3" />
+                  <span className="font-medium">Mais dinheiro para sua família</span>
+                </div>
+                <div className="flex items-center">
+                  <Leaf className="w-5 h-5 text-primary mr-3" />
+                  <span className="font-medium">Cuidado com o meio ambiente</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-primary mr-3" />
+                  <span className="font-medium">Sem fidelidade ou compromisso</span>
+                </div>
+                <div className="flex items-center">
+                  <Shield className="w-5 h-5 text-primary mr-3" />
+                  <span className="font-medium">Regulamentado pela ANEEL</span>
+                </div>
+              </div>
+              
+              <Button variant="cta" size="lg" className="text-lg px-8 py-4" onClick={handleWhatsAppClick}>
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Falar Direto no WhatsApp
+              </Button>
+            </div>
+            
+            <div>
+              <ContactForm />
+            </div>
           </div>
-          <p className="text-sm mt-6 opacity-75">
-            Sem compromisso • Atendimento humano • Resultado garantido
-          </p>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-secondary py-12 px-6 text-secondary-foreground">
-        <div className="container mx-auto text-center">
-          <img 
-            src="/lovable-uploads/f792746b-feb5-42c7-b9e2-a101e8ac277d.png" 
-            alt="ECOFAD Logo" 
-            className="h-16 mx-auto mb-6"
-          />
-          <p className="text-lg mb-4">
-            Energia limpa, economia garantida, futuro sustentável.
-          </p>
-          <p className="text-sm opacity-75">
-            © 2024 ECOFAD. Todos os direitos reservados. | Regulamentado pela ANEEL
-          </p>
-        </div>
-      </footer>
+      <ProfessionalFooter />
     </div>
   );
 };
